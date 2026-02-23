@@ -1,54 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-    Home,
-    HardHat,
-    Building2,
-    Layout,
-    Layers,
-    Briefcase,
-    ArrowRight
-} from "lucide-react";
-
-const services = [
-    {
-        title: "Residential Construction",
-        description: "Custom new home construction tailored to your vision. We handle everything from groundbreaking to the final walkthrough.",
-        icon: Home,
-        href: "#"
-    },
-    {
-        title: "Home Remodeling",
-        description: "Transform your existing space with our expert renovation services. Specialized in kitchens, bathrooms, and full-home refreshes.",
-        icon: HardHat,
-        href: "#"
-    },
-    {
-        title: "Commercial Build Outs",
-        description: "Professional construction for retail, office, and restaurant spaces. We deliver functional, high-impact commercial environments.",
-        icon: Building2,
-        href: "#"
-    },
-    {
-        title: "Design-Build Services",
-        description: "A streamlined approach that integrates design and construction. One point of contact, faster delivery, and better value.",
-        icon: Layout,
-        href: "#"
-    },
-    {
-        title: "Structural & Concrete",
-        description: "Solid foundations for lasting structures. Specialized in foundation repair, retaining walls, and seismic retrofitting.",
-        icon: Layers,
-        href: "#"
-    },
-    {
-        title: "Project Management",
-        description: "Expert consulting and oversight for your construction projects. We ensure everything stays on schedule and within budget.",
-        icon: Briefcase,
-        href: "#"
-    }
-];
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { services } from "@/data/services";
 
 const Services = () => {
     return (
@@ -87,12 +42,12 @@ const Services = () => {
                             <p className="text-gray-500 mb-8 leading-relaxed text-sm font-medium">
                                 {service.description}
                             </p>
-                            <a
+                            <Link
                                 href={service.href}
                                 className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-black hover:text-primary transition-colors"
                             >
                                 Learn More <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                            </a>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>
@@ -100,7 +55,7 @@ const Services = () => {
                 <div className="mt-20 text-center">
                     <p className="text-gray-500 font-bold uppercase tracking-widest text-xs mb-6">Need a custom solution for your project?</p>
                     <a
-                        href="#contact"
+                        href="/#contact"
                         className="inline-block bg-primary text-white font-black py-4 px-12 rounded-sm hover:bg-black transition-all uppercase tracking-widest text-sm shadow-lg shadow-primary/20"
                     >
                         Start Your Project Today
